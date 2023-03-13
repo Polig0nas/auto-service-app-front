@@ -1,14 +1,19 @@
-import './App.css';
-import CarForm from "./components/CarForm";
+// routes
+import Router from './routes';
+// theme
+import ThemeProvider from './theme';
+// components
+import ScrollToTop from './components/scroll-to-top';
+import { StyledChart } from './components/chart';
 
-function App() {
+// ----------------------------------------------------------------------
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-          <CarForm />
-      </header>
-    </div>
+    <ThemeProvider>
+      <ScrollToTop />
+      <StyledChart />
+      <Router />
+    </ThemeProvider>
   );
 }
-
-export default App;

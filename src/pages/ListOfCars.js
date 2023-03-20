@@ -4,6 +4,7 @@ import {Button, Table, TableBody, TableCell, TableHead, TableRow, Typography} fr
 import {useNavigate} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {getCars} from "../api/carApi";
+import ThemeProvider from "../theme";
 
 const ListOfCars = () => {
 
@@ -39,12 +40,9 @@ const ListOfCars = () => {
             <Helmet>
                 <title> Dashboard: Cars</title>
             </Helmet>
-            <Typography variant="h4">
-                Cars
-            </Typography>
 
-            <Button>Add+</Button>
-
+            <Button variant="outlined" color="primary">Add+</Button>
+            <hr/>
             <Table size="small">
                 <TableHead>
                     <TableRow>

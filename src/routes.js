@@ -5,6 +5,7 @@ import BlogPage from './pages/BlogPage';
 import LoginPage from './pages/LoginPage';
 import Page404 from './pages/Page404';
 import ListOfCars from './pages/ListOfCars';
+import FormikCar from "./pages/FormikCar";
 
 export default function Router() {
   const routes = useRoutes([
@@ -20,6 +21,10 @@ export default function Router() {
     {
       path: 'login',
       element: <LoginPage />,
+    },
+    {
+      path: 'formikCar',
+      element: <FormikCar />,
     },
     {
       element: <SimpleLayout />,

@@ -8,7 +8,7 @@ import ThemeProvider from "../theme";
 
 const ListOfCars = () => {
 
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
     const [cars, setCars] = useState([]);
 
@@ -41,7 +41,9 @@ const ListOfCars = () => {
                 <title> Dashboard: Cars</title>
             </Helmet>
 
-            <Button variant="outlined" color="primary">Add+</Button>
+            <Button variant="outlined"
+                    color="primary"
+                    onClick={() => navigate("/formikCar")}>Add+</Button>
             <hr/>
             <Table size="small">
                 <TableHead>

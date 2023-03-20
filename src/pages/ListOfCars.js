@@ -43,6 +43,8 @@ const ListOfCars = () => {
                 Cars
             </Typography>
 
+            <Button>Add+</Button>
+
             <Table size="small">
                 <TableHead>
                     <TableRow>

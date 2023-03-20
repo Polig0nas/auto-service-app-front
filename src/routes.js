@@ -5,9 +5,6 @@ import BlogPage from './pages/BlogPage';
 import LoginPage from './pages/LoginPage';
 import Page404 from './pages/Page404';
 import ListOfCars from './pages/ListOfCars';
-import DashboardAppPage from './pages/DashboardAppPage';
-
-// ----------------------------------------------------------------------
 
 export default function Router() {
   const routes = useRoutes([
@@ -15,8 +12,7 @@ export default function Router() {
       path: '/dashboard',
       element: <DashboardLayout />,
       children: [
-        { element: <Navigate to="/dashboard/app" />, index: true },
-        { path: 'app', element: <DashboardAppPage /> },
+        { element: <Navigate to="/dashboard/listOfCars" />, index: true },
         { path: 'listOfCars', element: <ListOfCars /> },
         { path: 'blog', element: <BlogPage /> },
       ],
@@ -28,7 +24,7 @@ export default function Router() {
     {
       element: <SimpleLayout />,
       children: [
-        { element: <Navigate to="/dashboard/app" />, index: true },
+        { element: <Navigate to="/dashboard/listOfCars" />, index: true },
         { path: '404', element: <Page404 /> },
         { path: '*', element: <Navigate to="/404" /> },
       ],

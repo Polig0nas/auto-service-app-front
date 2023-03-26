@@ -1,10 +1,9 @@
 import * as React from "react";
-import {Helmet} from 'react-helmet-async';
-import {Button, Table, TableBody, TableCell, TableHead, TableRow, Typography} from "@mui/material";
-import {useNavigate} from "react-router-dom";
 import {useEffect, useState} from "react";
+import {Helmet} from 'react-helmet-async';
+import {Button, Table, TableBody, TableCell, TableHead, TableRow} from "@mui/material";
 import {getCars} from "../api/carApi";
-import ThemeProvider from "../theme";
+import {useNavigate} from "react-router-dom";
 
 const ListOfCars = () => {
 
@@ -14,8 +13,8 @@ const ListOfCars = () => {
 
     useEffect(() => {
         getCars()
-            .then(response=> setCars(response))
-    }, [] )
+            .then(response => setCars(response))
+    }, [])
 
     const carList = (
         cars.map((cars, i) => (
@@ -41,27 +40,28 @@ const ListOfCars = () => {
                 <title> Dashboard: Cars</title>
             </Helmet>
 
-            <Button variant="outlined"
-                    color="primary"
-                    onClick={() => navigate("/formikCar")}>Add+</Button>
+            <div style={{marginTop: "10px", textAlign: "left"}}>
+                <Button variant="outlined" onClick={() => navigate("/dashboard/form")}>
+                    Add+
+                </Button>
+            </div>
             <hr/>
             <Table size="small">
                 <TableHead>
                     <TableRow>
-                        <TableCell>Gamintojas</TableCell>
-                        <TableCell>Modelis</TableCell>
-                        <TableCell>Pagaminimo metai</TableCell>
-                        <TableCell>Kėbulo tipas</TableCell>
-                        <TableCell>Kuro tipas</TableCell>
-                        <TableCell>Valstybinis numeris</TableCell>
-                        <TableCell />
+                        <TableCell>Make</TableCell>
+                        <TableCell>Model</TableCell>
+                        <TableCell>Year</TableCell>
+                        <TableCell>Body</TableCell>
+                        <TableCell>Fuel</TableCell>
+                        <TableCell>Number</TableCell>
+                        <TableCell/>
                     </TableRow>
                 </TableHead>
 
                 <TableBody>
                     {carList}
                 </TableBody>
-
             </Table>
         </>
     );

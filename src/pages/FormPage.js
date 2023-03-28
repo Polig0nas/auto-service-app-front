@@ -4,6 +4,7 @@ import {Button, Container, MenuItem, Select, Stack, TextField, Typography} from 
 import {Field, Form, Formik} from "formik";
 import Label from "../components/label";
 import formSchema from "../schemas";
+import {addCar} from "../api/carApi";
 
 export default function FormPage() {
     return (
@@ -32,8 +33,7 @@ export default function FormPage() {
                     validationSchema={formSchema}
 
                     onSubmit={async (values) => {
-                        await new Promise((r) => setTimeout(r, 500));
-                        alert(JSON.stringify(values, null, 2));
+                        await addCar(values)
                     }}>
                     {(props) => {
                         return (

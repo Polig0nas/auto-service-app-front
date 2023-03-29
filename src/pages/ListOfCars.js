@@ -4,8 +4,12 @@ import {Helmet} from 'react-helmet-async';
 import {Button, Table, TableBody, TableCell, TableHead, TableRow} from "@mui/material";
 import {getCars} from "../api/carApi";
 import {useNavigate} from "react-router-dom";
+import {useTranslation} from "react-i18next";
+import {i18n} from "../i18n";
 
 const ListOfCars = () => {
+
+    const { t } = useTranslation();
 
     const navigate = useNavigate();
 
@@ -49,12 +53,12 @@ const ListOfCars = () => {
             <Table size="small">
                 <TableHead>
                     <TableRow>
-                        <TableCell>Make</TableCell>
-                        <TableCell>Model</TableCell>
-                        <TableCell>Year</TableCell>
-                        <TableCell>Body</TableCell>
-                        <TableCell>Fuel</TableCell>
-                        <TableCell>Number</TableCell>
+                        <TableCell>{t('tMake')}</TableCell>
+                        <TableCell>{t('tModel')}</TableCell>
+                        <TableCell>{t('tYear')}</TableCell>
+                        <TableCell>{t('tBody')}</TableCell>
+                        <TableCell>{t('tFuel')}</TableCell>
+                        <TableCell>{t('tNumber')}</TableCell>
                         <TableCell/>
                     </TableRow>
                 </TableHead>

@@ -13,13 +13,6 @@ export default function FormPage() {
                 <title> Dashboard: Form</title>
             </Helmet>
 
-            <Container>
-                <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
-                    <Typography variant="h4" gutterBottom>
-                        Form
-                    </Typography>
-                </Stack>
-            </Container>
             <div align="center">
                 <Formik
                     initialValues={{

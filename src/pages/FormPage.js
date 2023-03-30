@@ -115,12 +115,16 @@ const FormPage = () => {
                                        as={TextField}/>
                                 <br/><br/>
                                 <Button variant="contained"
-                                        // onClick={() => navigate("/dashboard/listOfCars") && props.submitForm}
                                         type="submit"
-                                        onClick={() => {
-                                            props.submitForm().then(r => navigate("/dashboard/listOfCars"));
+                                        onClick={() => {props.submitForm()
                                         }}>
                                     Submit
+                                </Button>
+                                <br/><br/>
+                                <Button
+                                    variant="contained"
+                                    onClick={() => navigate("/dashboard/listOfCars")}
+                                >Cancel
                                 </Button>
                             </Form>
                         )

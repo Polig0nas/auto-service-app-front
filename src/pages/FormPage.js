@@ -30,8 +30,12 @@ const FormPage = () => {
                     validationSchema={formSchema}
 
                     onSubmit={async (values) => {
-                        await addCar(values)
-                        console.log("Submit clicked!")
+                        try {
+                            await addCar(values);
+                            navigate("/dashboard/listOfCars");
+                        } catch (error) {
+                            console.error(error);
+                        }
                     }}>
                     {(props) => {
                         return (
@@ -111,8 +115,11 @@ const FormPage = () => {
                                        as={TextField}/>
                                 <br/><br/>
                                 <Button variant="contained"
-                                        onClick={() => navigate("/dashboard/listOfCars") && props.submitForm}
-                                        type="submit">
+                                        // onClick={() => navigate("/dashboard/listOfCars") && props.submitForm}
+                                        type="submit"
+                                        onClick={() => {
+                                            props.submitForm().then(r => navigate("/dashboard/listOfCars"));
+                                        }}>
                                     Submit
                                 </Button>
                             </Form>

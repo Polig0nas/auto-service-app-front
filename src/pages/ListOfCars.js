@@ -5,7 +5,6 @@ import {Button, Table, TableBody, TableCell, TableHead, TableRow} from "@mui/mat
 import {getCars} from "../api/carApi";
 import {useNavigate} from "react-router-dom";
 import {useTranslation} from "react-i18next";
-import {i18n} from "../i18n";
 
 const ListOfCars = () => {
 
@@ -30,8 +29,8 @@ const ListOfCars = () => {
                 <TableCell>{cars.fuelType}</TableCell>
                 <TableCell>{cars.licencePlate}</TableCell>
                 <TableCell>
-                    <Button variant="contained">
-                        Preview
+                    <Button variant="contained" disabled>
+                        Done
                     </Button>
                 </TableCell>
             </TableRow>
@@ -70,5 +69,4 @@ const ListOfCars = () => {
         </>
     );
 }
-
 export default ListOfCars

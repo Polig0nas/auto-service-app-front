@@ -1,17 +1,11 @@
 import PropTypes from 'prop-types';
-// @mui
 import { styled } from '@mui/material/styles';
 import { Box, Stack, AppBar, Toolbar, IconButton } from '@mui/material';
-// utils
 import { bgBlur } from '../../../utils/cssStyles';
-// components
 import Iconify from '../../../components/iconify';
-//
 import Searchbar from './Searchbar';
 import AccountPopover from './AccountPopover';
 import LanguagePopover from './LanguagePopover';
-
-// ----------------------------------------------------------------------
 
 const NAV_WIDTH = 280;
 

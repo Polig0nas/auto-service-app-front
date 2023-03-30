@@ -4,8 +4,6 @@ import {Link as RouterLink} from 'react-router-dom';
 import {useTheme} from '@mui/material/styles';
 import {Box, Link} from '@mui/material';
 
-// ----------------------------------------------------------------------
-
 const Logo = forwardRef(({disabledLink = false, sx, ...other}, ref) => {
     const theme = useTheme();
 
@@ -14,6 +12,7 @@ const Logo = forwardRef(({disabledLink = false, sx, ...other}, ref) => {
     const PRIMARY_MAIN = theme.palette.primary.main;
 
     const PRIMARY_DARK = theme.palette.primary.dark;
+
 
     const logo = (
         <Box

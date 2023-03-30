@@ -1,20 +1,13 @@
 import PropTypes from 'prop-types';
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-// @mui
-import { styled, alpha } from '@mui/material/styles';
-import { Box, Link, Button, Drawer, Typography, Avatar, Stack } from '@mui/material';
-// mock
-// hooks
+import {useEffect} from 'react';
+import {useLocation} from 'react-router-dom';
+import {alpha, styled} from '@mui/material/styles';
+import {Box, Drawer, Link, Typography} from '@mui/material';
 import useResponsive from '../../../hooks/useResponsive';
-// components
 import Logo from '../../../components/logo';
 import Scrollbar from '../../../components/scrollbar';
 import NavSection from '../../../components/nav-section';
-//
 import navConfig from './config';
-
-// ----------------------------------------------------------------------
 
 const NAV_WIDTH = 280;
 
@@ -62,11 +55,11 @@ export default function Nav({ openNav, onCloseNav }) {
 
             <Box sx={{ ml: 2 }}>
               <Typography variant="subtitle2" sx={{ color: 'text.primary' }}>
-                name
+                Car Service
               </Typography>
 
               <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                email
+                List of cars under repair
               </Typography>
             </Box>
           </StyledAccount>
